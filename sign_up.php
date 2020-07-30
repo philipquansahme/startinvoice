@@ -48,7 +48,7 @@
                     <!-- Form -->
                     <div class="row">
                         <div class="col-12">
-                            <form class="form-horizontal mt-3 form-material" action="index.html">
+                            <form class="form-horizontal mt-3 form-material" action="">
                                 <div class="form-group mb-3">
                                     <div class="col-xs-12">
                                         <input class="form-control" type="text" required="" placeholder="Name">
