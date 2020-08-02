@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title><?php echo $page_title; ?></title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/xtremeadmin/" />
     <link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
