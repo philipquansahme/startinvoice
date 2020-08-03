@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>Monster admin Template - The Ultimate Multipurpose admin template</title>
+    <title>Start Invoice - Invoicing Solution for Start-Ups</title>
 	<link rel="canonical" href="https://www.wrappixel.com/templates/monsteradmin/" />
     <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet">
@@ -48,7 +48,7 @@
                     <!-- Form -->
                     <div class="row">
                         <div class="col-12">
-                            <form class="form-horizontal mt-3 form-material" action="">
+                            <form class="form-horizontal mt-3 form-material" action="actions/auth/sign_up.php" method="POST">
                                 <div class="form-group mb-3">
                                     <div class="col-xs-12">
                                         <input class="form-control" type="text" required="" placeholder="Name">
@@ -79,7 +79,7 @@
                                 </div>
                                 <div class="form-group text-center mb-3">
                                     <div class="col-xs-12">
-                                        <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Sign Up</button>
+                                        <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit" name="sign-up-submit">Sign Up</button>
                                     </div>
                                 </div>
                                 <div class="form-group mb-0 mt-2 ">

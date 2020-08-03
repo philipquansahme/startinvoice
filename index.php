@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>StartInvoice - Ghana</title>
+    <title>Start Invoice - Invoicing Solution for Start-Ups</title>
 	<link rel="canonical" href="https://www.wrappixel.com/templates/monsteradmin/" />
     <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet">
@@ -48,14 +48,71 @@
                     <!-- Form -->
                     <div class="row">
                         <div class="col-12">
-                            <form class="form-horizontal mt-3 form-material" id="loginform" action="index.html">
+                            <?php
+                                $msg = (isset($_GET['signup'])) ? $_GET['signup'] : 'default';
+                                if ($msg == "success") {
+                                    echo '<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
+                                            role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <strong>Success - </strong> Thanks for signing up. Kindly log in with your Staff ID or email.
+                                        </div>';
+                                } elseif ($msg == "logout") {
+                                    echo '<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
+                                            role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <strong>Success - </strong> You have logged out successfully!
+                                        </div>';
+                                }
+                                $error = (isset($_GET['error'])) ? $_GET['error'] : 'error-default';
+                                if ($error == "loginreq") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Error - </strong> Log in required!
+                                    </div>';
+                                } elseif ($error == "emptyfields") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Error - </strong> Fields cannot be empty!
+                                    </div>';
+                                } elseif ($error == "sqlerror") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Error - </strong> Problem connecting to the database!
+                                    </div>';
+                                } elseif ($error == "wrongpwd") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Error - </strong> Wrong Password!
+                                    </div>';
+                                } elseif ($error == "nouser") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Error - </strong> User Doesn\'t Exit. Enter right details!
+                                    </div>';
+                                }
+                            ?>
+                            <form class="form-horizontal mt-3 form-material" id="loginform" action="actions/auth/login.php" method="POST">
                                 <div class="form-group mb-3">
                                     <div class="">
-                                        <input class="form-control" type="text" required="" placeholder="Username"> </div>
+                                        <input class="form-control" type="email" required placeholder="Email Address" name="email"> </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <div class="">
-                                        <input class="form-control" type="password" required="" placeholder="Password"> </div>
+                                        <input class="form-control" type="password" required placeholder="Password" name="password"> </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="d-flex">
@@ -70,20 +127,20 @@
                                 </div>
                                 <div class="form-group text-center mt-4">
                                     <div class="col-xs-12">
-                                        <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Log In</button>
+                                        <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit" name="login-submit">Log In</button>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 mt-2 text-center">
                                         <div class="social mb-3">
                                             <a href="javascript:void(0)" class="btn  btn-facebook" data-toggle="tooltip" title="Login with Facebook"> <i aria-hidden="true" class="fab fa-facebook-f"></i> </a>
                                             <a href="javascript:void(0)" class="btn btn-googleplus" data-toggle="tooltip" title="Login with Google"> <i aria-hidden="true" class="fab fa-google-plus"></i> </a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group mb-0 mt-4">
                                     <div class="col-sm-12 justify-content-center d-flex">
-                                        <p>Don't have an account? <a href="sign_up.php" class="text-info font-weight-normal ml-1">Sign Up</a></p>
+                                        <p>Are you a business owner? <a href="sign_up.php" class="text-info font-weight-normal ml-1">Sign Up</a></p>
                                     </div>
                                 </div>
                             </form>

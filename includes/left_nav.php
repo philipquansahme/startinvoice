@@ -2,10 +2,13 @@
     <!-- Sidebar scroll-->
     <div class="scroll-sidebar">
         <!-- User profile -->
-        <div class="user-profile position-relative" style="background: url(assets/images/background/user-info.jpg) no-repeat; ">
+        <div class="user-profile position-relative" style="background: url(assets/images/background/user-info.jpg) no-repeat;">
             <!-- User profile image -->
-			<!--img src="assets/images/background/user-info.jpg"-->
-           
+            <div class="profile-img"> <img src="assets/images/users/profile.png" alt="user" class="w-100" /> </div>
+            <!-- User profile text-->
+            <div class="profile-text pt-1"> 
+                <a class="w-100 text-white d-block position-relative">Administrator</a>
+            </div>
         </div>
         <!-- End User profile text-->
         <!-- Sidebar navigation-->
