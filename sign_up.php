@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>Monster admin Template - The Ultimate Multipurpose admin template</title>
+    <title>Start Invoice - Invoicing Solution for Start-Ups</title>
 	<link rel="canonical" href="https://www.wrappixel.com/templates/monsteradmin/" />
     <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet">
@@ -48,25 +48,100 @@
                     <!-- Form -->
                     <div class="row">
                         <div class="col-12">
-                            <form class="form-horizontal mt-3 form-material" action="">
+                            <?php
+                                $error = (isset($_GET['error'])) ? $_GET['error'] : 'default';
+                                if ($error == "emptyfields") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <strong>Error - </strong> Fields cannot be empty!
+                                        </div>';
+                                } elseif ($error == "invalidemail") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <strong>Error - </strong> Invalid Email Address!
+                                        </div>';
+                                } elseif ($error == "invalidsid") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <strong>Error - </strong> Wrong Staff ID Format. Must be digits only!
+                                        </div>';
+                                } elseif ($error == "passwordshort") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <strong>Error - </strong> Password must be at least 8 characters!
+                                        </div>';
+                                } elseif ($error == "passwordcheck") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <strong>Error - </strong> Passwords Don\'t Match!
+                                        </div>';
+                                } elseif ($error == "sqlerror"){
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <strong>Error - </strong> Problem connecting to the database!
+                                        </div>';
+                                } elseif ($error == "sidnotfound"){
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <strong>Error - </strong> Staff ID not found in system. Kindly contact the admin.
+                                        </div>';
+                                }  elseif ($error == "sidactive"){
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <strong>Error - </strong> Staff ID assigned to another user!
+                                        </div>';
+                                } 
+                            ?>
+                            <form class="form-horizontal mt-3 form-material" action="actions/auth/sign_up.php" method="POST">
                                 <div class="form-group mb-3">
-                                    <div class="col-xs-12">
-                                        <input class="form-control" type="text" required="" placeholder="Name">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input class="form-control" type="text" required placeholder="First Name" name="first_name">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input class="form-control" type="text" required placeholder="Last Name" name="last_name">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3 ">
                                     <div class="col-xs-12">
-                                        <input class="form-control" type="text" required="" placeholder="Email">
+                                        <input class="form-control" type="text" required placeholder="Email" name="email">
                                     </div>
                                 </div>
                                 <div class="form-group mb-3 ">
                                     <div class="col-xs-12">
-                                        <input class="form-control" type="password" required="" placeholder="Password">
+                                        <input class="form-control" type="text" required placeholder="Your Business/Company Name" name="business">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3 ">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" type="tel" required placeholder="Phone Number" maxlength="10" name="phone">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3 ">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" type="password" required placeholder="Password" name="password">
                                     </div>
                                 </div>
                                 <div class="form-group mb-3">
                                     <div class="col-xs-12">
-                                        <input class="form-control" type="password" required="" placeholder="Confirm Password">
+                                        <input class="form-control" type="password" required placeholder="Confirm Password" name="passwordConfirm">
                                     </div>
                                 </div>
                                 <div class="form-group mb-3">
@@ -79,7 +154,7 @@
                                 </div>
                                 <div class="form-group text-center mb-3">
                                     <div class="col-xs-12">
-                                        <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Sign Up</button>
+                                        <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit" name="sign-up-submit">Sign Up</button>
                                     </div>
                                 </div>
                                 <div class="form-group mb-0 mt-2 ">
