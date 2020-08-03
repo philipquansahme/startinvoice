@@ -7,7 +7,7 @@
                     <div class="d-flex flex-wrap">
                         <div>
                             <h3 class="card-title">Dashboard</h3>
-                            <h6 class="card-subtitle">Content for Dashboard Goes Here</h6>
+                            <h6 class="card-subtitle">Start Invoice</h6>
                         </div>
                     </div>
                 </div>
