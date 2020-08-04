@@ -92,19 +92,19 @@
                                             </button>
                                             <strong>Error - </strong> Problem connecting to the database!
                                         </div>';
-                                } elseif ($error == "sidnotfound"){
+                                } elseif ($error == "busnameexist"){
                                     echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
-                                            <strong>Error - </strong> Staff ID not found in system. Kindly contact the admin.
+                                            <strong>Error - </strong> Sorry Business/Company name already exist!
                                         </div>';
-                                }  elseif ($error == "sidactive"){
+                                }  elseif ($error == "acctexist"){
                                     echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
-                                            <strong>Error - </strong> Staff ID assigned to another user!
+                                            <strong>Error - </strong> Email or Phone Number assigned to another user!
                                         </div>';
                                 } 
                             ?>
