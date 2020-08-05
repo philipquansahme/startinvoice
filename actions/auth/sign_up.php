@@ -70,8 +70,16 @@
                         } else {
                             mysqli_stmt_bind_param($stmt_business_name, "is", $id, $business);
                             mysqli_stmt_execute($stmt_business_name);
-                            header("location: ../../index.php?signup=success");
-                            exit();
+                            include '../../emails/send_activation.php';
+                            $token = bin2hex(random_bytes(32));
+                            if(sendAccountVerfication($token, $first_name.' '.$last_name, $email)){
+                                header("location: ../../index.php?signup=success");
+                                exit();
+                            } else{
+                                header("location: ../../sign_up.php?error=busnameexist");
+                                exit();
+                            }
+                            
                         }
                     }
                 }

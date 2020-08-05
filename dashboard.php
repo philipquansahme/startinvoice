@@ -1,6 +1,6 @@
 <?php 
     include('misc/path.php');
-    include('misc/sec.php');
+    // include('misc/sec.php');
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
