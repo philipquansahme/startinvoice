@@ -1,3 +1,4 @@
+<?php include('misc/loginsec.php');  ?>
 <!DOCTYPE html>
 <html dir="ltr">
 
@@ -11,7 +12,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>Start Invoice - Invoicing Solution for Start-Ups</title>
-	<link rel="canonical" href="https://www.wrappixel.com/templates/monsteradmin/" />
+	<link rel="canonical" href="" />
     <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST['sign-up-submit'])) {
-        require('../../includes/db/db_con.php');
+        require('../../config/db_con.php');
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
         $email = $_POST['email'];
@@ -80,7 +80,7 @@
         mysqli_stmt_close($stmt);
         mysqli_close($con);
         
-    }else{
+    }else {
         header('location: ../../sign_up.php');
         exit();
     }

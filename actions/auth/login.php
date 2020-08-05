@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST['login-submit'])) {
-        require('../../includes/db/db_con.php');
+        require('../../config/db_con.php');
         if ($con) {
             echo "Connected";
         } else {
