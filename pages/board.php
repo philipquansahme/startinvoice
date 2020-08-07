@@ -1,4 +1,4 @@
-<?php include('includes/header.php'); ?>
+<!-- 
 <style>
 	.card-title{color: #1E88E5;
 		text-align: right;
@@ -6,8 +6,179 @@
 	}
 	
 	.card{border: solid 1px #EEF5F9;}
-</style>
-<body>
+</style> -->
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Basic Material inputs</h4>
+                <h6 class="card-subtitle">Just add <code>form-material</code> class to the form that's
+                    it.</h6>
+                <form class="form-material mt-4">
+                    <div class="form-group">
+                        <label>Default Text <span class="help"> e.g. "George deo"</span></label>
+                        <input type="text" class="form-control form-control-line"
+                            value="Some text value..."> </div>
+                    <div class="form-group">
+                        <label for="example-email">Email <span class="help"> e.g.
+                                "example@gmail.com"</span></label>
+                        <input type="email" id="example-email2" name="example-email"
+                            class="form-control" placeholder="Email"> </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" value="password"> </div>
+                    <div class="form-group">
+                        <label>Placeholder</label>
+                        <input type="text" class="form-control" placeholder="placeholder"> </div>
+                    <div class="form-group">
+                        <label>Text area</label>
+                        <textarea class="form-control" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Input Select</label>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>File upload</label>
+                        <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                            <div class="form-control" data-trigger="fileinput"> <i
+                                    class="glyphicon glyphicon-file fileinput-exists"></i> <span
+                                    class="fileinput-filename"></span></div> <span
+                                class="input-group-addon btn btn-default btn-file"> <span
+                                    class="fileinput-new">Select file</span> <span
+                                    class="fileinput-exists">Change</span>
+                                <input type="hidden">
+                                <input type="file" name="..."> </span> <a href="#"
+                                class="input-group-addon btn btn-default fileinput-exists"
+                                data-dismiss="fileinput">Remove</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Helping text</label>
+                        <input type="text" class="form-control form-control-line"> <span
+                            class="help-block text-muted"><small>A block of help text that breaks onto a
+                                new line and may extend beyond one line.</small></span> </div>
+                </form>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Different Widths</h4>
+                <h6 class="card-subtitle">Just add <code>col*</code> class to form-group</h6>
+                <form class="form-material mt-4 row">
+                    <div class="form-group col-md-6 mt-3">
+                        <input type="text" class="form-control form-control-line" value="col-md-6">
+                    </div>
+                    <div class="form-group col-md-6 mt-3">
+                        <input type="email" id="example-email2" name="example-email"
+                            class="form-control" placeholder="col-md-6"> </div>
+                    <div class="form-group col-md-4 mt-3">
+                        <input type="text" class="form-control form-control-line" value="col-md-4">
+                    </div>
+                    <div class="form-group col-md-4 mt-3">
+                        <input type="email" id="example-email2" name="example-email"
+                            class="form-control" placeholder="col-md-4"> </div>
+                    <div class="form-group col-md-4 mt-3">
+                        <input type="text" class="form-control" value="col-md-4"> </div>
+                    <div class="form-group col-md-3 mt-3">
+                        <input type="text" class="form-control" placeholder="col-md-3"> </div>
+                    <div class="form-group col-md-3 mt-3">
+                        <select class="form-control">
+                            <option>col-md-3</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3 mt-3">
+                        <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                            <div class="form-control" data-trigger="fileinput"> <i
+                                    class="glyphicon glyphicon-file fileinput-exists"></i> <span
+                                    class="fileinput-filename"></span></div> <span
+                                class="input-group-addon btn btn-default btn-file"> <span
+                                    class="fileinput-new">Select file</span> <span
+                                    class="fileinput-exists">Change</span>
+                                <input type="file" name="..."> </span> <a href="#"
+                                class="input-group-addon btn btn-default fileinput-exists"
+                                data-dismiss="fileinput">Remove</a>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3 mt-3">
+                        <input type="text" placeholder="col-md-3"
+                            class="form-control form-control-line"> </div>
+                    <div class="form-group col-md-12 mt-3">
+                        <label>Text area</label>
+                        <textarea class="form-control" rows="5"></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-8 col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex flex-wrap">
+                            <div>
+                                <h3 class="card-title">Sales Overview</h3>
+                                <h6 class="card-subtitle">Ample Admin Vs Pixel Admin</h6>
+                            </div>
+                            <div class="ml-auto">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item px-2">
+                                        <h6 class="text-success"><i
+                                                class="fa fa-circle font-10 mr-2 "></i>Ample</h6>
+                                    </li>
+                                    <li class="list-inline-item px-2">
+                                        <h6 class="text-info"><i
+                                                class="fa fa-circle font-10 mr-2"></i>Pixel</h6>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="amp-pxl" style="height: 360px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Our Visitors </h3>
+                <h6 class="card-subtitle">Different Devices Used to Visit</h6>
+                <div id="visitor" style="height:290px; width:100%;"></div>
+            </div>
+            <div class="card-body text-center border-top">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item px-2">
+                        <h6 class="text-info"><i class="fa fa-circle font-10 mr-2 "></i>Mobile</h6>
+                    </li>
+                    <li class="list-inline-item px-2">
+                        <h6 class=" text-primary"><i class="fa fa-circle font-10 mr-2"></i>Desktop</h6>
+                    </li>
+                    <li class="list-inline-item px-2">
+                        <h6 class=" text-success"><i class="fa fa-circle font-10 mr-2"></i>Tablet</h6>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Column -->
 <div class="col-lg-12 col-md-12">
     <div class="card">
