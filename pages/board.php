@@ -102,8 +102,8 @@
         </div>
     </div>
 </div>
-	<div class="col-lg-12 col-md-12">
-	 <div class="row">
+<div class="col-lg-12 col-md-12">
+    <div class="row">
                     <div class="col-lg-4">
                         <!-- Column -->
                         <div class="card earning-widget">
@@ -294,6 +294,5 @@
                     
                 </div>
 		 </div>
-<?php include('includes/footer.php'); ?>
 
 	
