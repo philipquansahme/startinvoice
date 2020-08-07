@@ -7,7 +7,7 @@
 		define("DEMO", false); // setting to TRUE will stop the email from sending.
 
 		// set the location of the template file to be loaded
-		$template_file = "./templates/activate_account.php";
+		$template_file = "../emails/templates/activate_account.php";
 
 		// set the email 'from' information
 		$email_from = SITE_NAME . " <" . SITE_EMAIL . ">";
@@ -49,7 +49,7 @@
 		}
 
 		// display the email template back to the user for final approval
-		//echo $email_message;
+		echo $email_message;
 
 		// check if the email script is in demo mode, if it is then dont actually send an email
 		if (DEMO) {
@@ -64,3 +64,5 @@
 		}
 
 	}
+
+	sendAccountVerfication('6732687923467464', 'Philip', 'philip@gmail.com');
