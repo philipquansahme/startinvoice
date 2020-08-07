@@ -37,3 +37,6 @@
 <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
 <script src="dist/js/pages/datatable/datatable-advanced.init.js"></script>
+<script src="assets/extra-libs/sparkline/sparkline.js"></script>
+
+

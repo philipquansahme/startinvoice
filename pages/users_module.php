@@ -1,3 +1,4 @@
+<?php include('includes/header.php'); ?>
 <div class="col-lg-12 col-md-12">
     <div class="card">
         <div class="card-body">
@@ -47,3 +48,5 @@
         </div>
     </div>
 </div>
+
+<?php include('includes/footer.php'); ?>
