@@ -72,11 +72,11 @@
                             mysqli_stmt_execute($stmt_business_name);
                             include '../../emails/send_activation.php';
                             $token = bin2hex(random_bytes(32));
-                            if(sendAccountVerfication($token, $first_name.' '.$last_name, $email)){
+                            if(sendAccountVerfication($token, $business, $first_name.' '.$last_name, $email)){
                                 header("location: ../../index.php?signup=success");
                                 exit();
                             } else{
-                                header("location: ../../sign_up.php?error=busnameexist");
+                                header("location: ../../sign_up.php?error=emailerror");
                                 exit();
                             }
                             
