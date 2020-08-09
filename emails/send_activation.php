@@ -18,7 +18,7 @@
 			"{EMAIL_LOGO_ICON}" => LOGO_ICON,
 			"{EMAIL_LOGO_TEXT}" => LOGO_TEXT,
 			"{EMAIL_TITLE}" => "Activate your Start Invoice Account | Start Invoice",
-			"{CUSTOM_URL}" => SITE_URL . "/activate.php?activator=" . $token,
+			"{CUSTOM_URL}" => SITE_URL . "/activate.php?validate=" . $token,
 			"{BUSINESS_NAME}" => $business_name,
 			"{TO_NAME}" => $to_name,
 			"{TO_EMAIL}" => $to_email,

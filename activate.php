@@ -1,9 +1,9 @@
 <?php
-    if (isset($_GET['activator'])) {
+    if (isset($_GET['validate'])) {
 
         require 'config/db_con.php';
 
-        $verify_token = $_GET['activator'];
+        $verify_token = $_GET['validate'];
         $sql = "SELECT * FROM users WHERE verify_token = ? LIMIT 1";
         $stmt = mysqli_stmt_init($con);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
