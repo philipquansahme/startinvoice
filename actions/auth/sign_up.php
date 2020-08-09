@@ -71,14 +71,15 @@
                             mysqli_stmt_bind_param($stmt_business_name, "is", $id, $business);
                             mysqli_stmt_execute($stmt_business_name);
                             include '../../emails/send_activation.php';
+                            include '../../sms/sms.php';
+
+                            $sms_msg = "Hello $first_name, Thanks for registering $business. Kindly check your mail to activate account.";
+
+                            sendAccountVerfication(bin2hex($verification_token), $business, $first_name.' '.$last_name, $email);
+                            sendSMS($phone, $sms_msg);
+                            header("location: ../../index.php?signup=success&email=$email");
+                            exit();
                             
-                            if(sendAccountVerfication(bin2hex($verification_token), $business, $first_name.' '.$last_name, $email)){
-                                header("location: ../../index.php?signup=success&email=$email");
-                                exit();
-                            } else{
-                                header("location: ../../sign_up.php?error=emailerror");
-                                exit();
-                            }
                             
                         }
                     }

@@ -50,6 +50,7 @@
                     <div class="row">
                         <div class="col-12">
                             <?php
+                                if (isset($_GET['email'])) { $email = $_GET['email']; }
                                 $msg = (isset($_GET['signup'])) ? $_GET['signup'] : 'default';
                                 if ($msg == "success") {
                                     echo '<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
@@ -57,7 +58,7 @@
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
-                                            <strong>Success - </strong> Thanks for signing up. Kindly log in with your Staff ID or email.
+                                            <strong>Success - </strong> Sign up successful. Kindly check your email <strong>'.$email.'</strong> to activate your account.
                                         </div>';
                                 } elseif ($msg == "logout") {
                                     echo '<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"

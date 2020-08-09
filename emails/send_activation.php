@@ -108,12 +108,5 @@
 		}
 
 		// send the email out to the user
-		if (mail($email_to, $email_subject, $email_message, $email_headers)) {
-			return true;
-		} else {
-			return false;
-		}
-
+		mail($email_to, $email_subject, $email_message, $email_headers);
 	}
-
-	sendAccountVerfication('6732687923467464', 'Vivisomething', 'Philip Kofi', 'philip@gmail.com');
