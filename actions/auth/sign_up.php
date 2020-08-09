@@ -8,8 +8,7 @@
         $phone = $_POST['phone'];
         $password = $_POST['password'];
         $password_confirm = $_POST['passwordConfirm'];
-        $ustp_id = 1;
-        $num_of_login = 0;
+        $verification_token = random_bytes(32);
         
         if (empty($first_name) || empty($last_name)|| empty($email) || empty($business) || empty($phone) || empty($password) || empty($password_confirm) ) {
             header("location: ../../sign_up.php?error=emptyfields");
@@ -52,14 +51,15 @@
                         header("location: ../../sign_up.php?error=busnameexist");
                         exit();
                     }
-                    $sql_insert = "INSERT INTO users(ustp_id, first_name, last_name, email, phone_number, password, num_of_login) VALUES(?,?,?,?,?,?,?)";
+                    $sql_insert = "INSERT INTO users(first_name, last_name, email, phone_number, password, verify_token) VALUES(?,?,?,?,?,?)";
                     $stmt_insert = mysqli_stmt_init($con);
                     if (!mysqli_stmt_prepare($stmt_insert, $sql_insert)) {
                         header("location: ../../sign_up.php?error=sqlerror");
                         exit();
                     } else {
                         $hashed_password = password_hash($password, PASSWORD_ARGON2I);
-                        mysqli_stmt_bind_param($stmt_insert, "issssss", $ustp_id, $first_name, $last_name, $email, $phone, $hashed_password, $num_of_login);
+                        $hashed_verification_token = password_hash($verification_token, PASSWORD_ARGON2I);
+                        mysqli_stmt_bind_param($stmt_insert, "ssssss", $first_name, $last_name, $email, $phone, $hashed_password, $hashed_verification_token);
                         mysqli_stmt_execute($stmt_insert);
                         $id = mysqli_stmt_insert_id($stmt_insert);
                         $sql_business_name = "INSERT INTO business(user_id, business_name) VALUES (?, ?)";
@@ -71,9 +71,9 @@
                             mysqli_stmt_bind_param($stmt_business_name, "is", $id, $business);
                             mysqli_stmt_execute($stmt_business_name);
                             include '../../emails/send_activation.php';
-                            $token = bin2hex(random_bytes(32));
-                            if(sendAccountVerfication($token, $business, $first_name.' '.$last_name, $email)){
-                                header("location: ../../index.php?signup=success");
+                            
+                            if(sendAccountVerfication(bin2hex($verification_token), $business, $first_name.' '.$last_name, $email)){
+                                header("location: ../../index.php?signup=success&email=$email");
                                 exit();
                             } else{
                                 header("location: ../../sign_up.php?error=emailerror");

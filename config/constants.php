@@ -1,4 +1,9 @@
 <?php
+    $token = random_bytes(32);
+    echo $token.'<br>';
+    $hashed_token = password_hash($token, PASSWORD_ARGON2I);
+    echo $hashed_token;
+
     define('SITE_NAME', 'Start Invoice');
     define('SITE_EMAIL', 'noreply@startinvoice.tk');
     define('SITE_URL', 'http://localhost:8080/startinvoice');
