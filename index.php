@@ -1,3 +1,4 @@
+<?php include('misc/loginsec.php');  ?>
 <!DOCTYPE html>
 <html dir="ltr">
 
@@ -11,7 +12,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>Start Invoice - Invoicing Solution for Start-Ups</title>
-	<link rel="canonical" href="https://www.wrappixel.com/templates/monsteradmin/" />
+	<link rel="canonical" href="" />
     <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -49,6 +50,7 @@
                     <div class="row">
                         <div class="col-12">
                             <?php
+                                if (isset($_GET['email'])) { $email = $_GET['email']; }
                                 $msg = (isset($_GET['signup'])) ? $_GET['signup'] : 'default';
                                 if ($msg == "success") {
                                     echo '<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
@@ -56,7 +58,7 @@
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
-                                            <strong>Success - </strong> Thanks for signing up. Kindly log in with your Staff ID or email.
+                                            <strong>Success - </strong> Sign up successful. Kindly check your email <strong>'.$email.'</strong> to activate your account.
                                         </div>';
                                 } elseif ($msg == "logout") {
                                     echo '<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
@@ -102,6 +104,13 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                         <strong>Error - </strong> User Doesn\'t Exit. Enter right details!
+                                    </div>';
+                                } elseif ($error == "activationerror") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Error - </strong> Activation Failed. Account couldn\'t be found!
                                     </div>';
                                 }
                             ?>

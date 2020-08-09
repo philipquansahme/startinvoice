@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST['sign-up-submit'])) {
-        require('../../includes/db/db_con.php');
+        require('../../config/db_con.php');
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
         $email = $_POST['email'];
@@ -8,8 +8,7 @@
         $phone = $_POST['phone'];
         $password = $_POST['password'];
         $password_confirm = $_POST['passwordConfirm'];
-        $ustp_id = 1;
-        $num_of_login = 0;
+        $verification_token = random_bytes(32);
         
         if (empty($first_name) || empty($last_name)|| empty($email) || empty($business) || empty($phone) || empty($password) || empty($password_confirm) ) {
             header("location: ../../sign_up.php?error=emptyfields");
@@ -52,14 +51,15 @@
                         header("location: ../../sign_up.php?error=busnameexist");
                         exit();
                     }
-                    $sql_insert = "INSERT INTO users(ustp_id, first_name, last_name, email, phone_number, password, num_of_login) VALUES(?,?,?,?,?,?,?)";
+                    $sql_insert = "INSERT INTO users(first_name, last_name, email, phone_number, password, verify_token) VALUES(?,?,?,?,?,?)";
                     $stmt_insert = mysqli_stmt_init($con);
                     if (!mysqli_stmt_prepare($stmt_insert, $sql_insert)) {
                         header("location: ../../sign_up.php?error=sqlerror");
                         exit();
                     } else {
                         $hashed_password = password_hash($password, PASSWORD_ARGON2I);
-                        mysqli_stmt_bind_param($stmt_insert, "issssss", $ustp_id, $first_name, $last_name, $email, $phone, $hashed_password, $num_of_login);
+                        $hashed_verification_token = password_hash($verification_token, PASSWORD_ARGON2I);
+                        mysqli_stmt_bind_param($stmt_insert, "ssssss", $first_name, $last_name, $email, $phone, $hashed_password, $hashed_verification_token);
                         mysqli_stmt_execute($stmt_insert);
                         $id = mysqli_stmt_insert_id($stmt_insert);
                         $sql_business_name = "INSERT INTO business(user_id, business_name) VALUES (?, ?)";
@@ -70,8 +70,17 @@
                         } else {
                             mysqli_stmt_bind_param($stmt_business_name, "is", $id, $business);
                             mysqli_stmt_execute($stmt_business_name);
-                            header("location: ../../index.php?signup=success");
+                            include '../../emails/send_activation.php';
+                            include '../../sms/sms.php';
+
+                            $sms_msg = "Hello $first_name, Thanks for registering $business. Kindly check your mail to activate account.";
+
+                            sendAccountVerfication(bin2hex($verification_token), $business, $first_name.' '.$last_name, $email);
+                            sendSMS($phone, $sms_msg);
+                            header("location: ../../index.php?signup=success&email=$email");
                             exit();
+                            
+                            
                         }
                     }
                 }
@@ -80,7 +89,7 @@
         mysqli_stmt_close($stmt);
         mysqli_close($con);
         
-    }else{
+    }else {
         header('location: ../../sign_up.php');
         exit();
     }
