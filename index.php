@@ -105,6 +105,13 @@
                                         </button>
                                         <strong>Error - </strong> User Doesn\'t Exit. Enter right details!
                                     </div>';
+                                } elseif ($error == "activationerror") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Error - </strong> Activation Failed. Account couldn\'t be found!
+                                    </div>';
                                 }
                             ?>
                             <form class="form-horizontal mt-3 form-material" id="loginform" action="actions/auth/login.php" method="POST">
