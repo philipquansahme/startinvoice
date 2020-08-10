@@ -1,26 +1,25 @@
 <?php
     if (isset($_POST['login-submit'])) {
+        
         require('../../config/db_con.php');
-        if ($con) {
-            echo "Connected";
-        } else {
-            echo "Not Connected";
-        }
+        
+        header('location: ../index.php?error=emptyfields');
+        exit();
 
-        // $username = $_POST['userName'];
-        // $password = $_POST['password'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-        // if (empty($username) || empty($password)) {
+        // if (empty($email) || empty($password)) {
         //     header('location: ../index.php?error=emptyfields');
         //     exit();
         // } else {
-        //     $sql = "SELECT * FROM users WHERE userName=? OR email=?";
+        //     $sql = "SELECT * FROM users WHERE  email=?";
         //     $stmt = mysqli_stmt_init($con);
         //     if (!mysqli_stmt_prepare($stmt, $sql)) {
         //         header("location: ../index.php?error=sqlerror");
         //         exit();
         //     } else {
-        //         mysqli_stmt_bind_param($stmt, "ss", $username, $username);
+        //         mysqli_stmt_bind_param($stmt, "s", $email);
         //         mysqli_stmt_execute($stmt);
         //         $result = mysqli_stmt_get_result($stmt);
         //         $row = mysqli_fetch_assoc($result);
