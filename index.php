@@ -112,6 +112,20 @@
                                         </button>
                                         <strong>Error - </strong> Activation Failed. Account couldn\'t be found!
                                     </div>';
+                                } elseif ($error == "activationnotfound") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Error - </strong> Activation Failed. Request doesn\'t be match. Contact Support!
+                                    </div>';
+                                } elseif ($error == "activationdonealready") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Error - </strong> Activation Failed. Seems your account has already been verified. Contact Support if this is a mistake!
+                                    </div>';
                                 }
                             ?>
                             <form class="form-horizontal mt-3 form-material" id="loginform" action="actions/auth/login.php" method="POST">
