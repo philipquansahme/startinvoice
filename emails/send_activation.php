@@ -2,7 +2,7 @@
 	include '../config/constants.php';
 
 
-	function sendAccountVerfication($token, $business_name, $to_name, $to_email){
+	function sendAccountVerfication($token, $selector, $business_name, $to_name, $to_email){
 		// allow for demo mode testing of emails
 		define("DEMO", false); // setting to TRUE will stop the email from sending.
 
@@ -18,7 +18,7 @@
 			"{EMAIL_LOGO_ICON}" => LOGO_ICON,
 			"{EMAIL_LOGO_TEXT}" => LOGO_TEXT,
 			"{EMAIL_TITLE}" => "Activate your Start Invoice Account | Start Invoice",
-			"{CUSTOM_URL}" => SITE_URL . "/activate.php?validate=" . $token,
+			"{CUSTOM_URL}" => SITE_URL . "/activate.php?selector=".$selector."&validate=" . $token,
 			"{BUSINESS_NAME}" => $business_name,
 			"{TO_NAME}" => $to_name,
 			"{TO_EMAIL}" => $to_email,
@@ -95,11 +95,10 @@
 			if (strlen($key) > 2 && trim($swap_var[$key]) != '') {
 				$email_message = str_replace($key, $swap_var[$key], $email_message);
 			}
-
 		}
 
 		// display the email template back to the user for final approval
-		echo $email_message;
+		// echo $email_message;
 
 		// check if the email script is in demo mode, if it is then dont actually send an email
 		if (DEMO) {

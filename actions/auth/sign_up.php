@@ -8,6 +8,7 @@
         $phone = $_POST['phone'];
         $password = $_POST['password'];
         $password_confirm = $_POST['passwordConfirm'];
+        $verification_selector = bin2hex(random_bytes(8));
         $verification_token = random_bytes(32);
         
         if (empty($first_name) || empty($last_name)|| empty($email) || empty($business) || empty($phone) || empty($password) || empty($password_confirm) ) {
@@ -51,7 +52,7 @@
                         header("location: ../../sign_up.php?error=busnameexist");
                         exit();
                     }
-                    $sql_insert = "INSERT INTO users(first_name, last_name, email, phone_number, password, verify_token) VALUES(?,?,?,?,?,?)";
+                    $sql_insert = "INSERT INTO users(first_name, last_name, email, phone_number, password, verify_token, verify_selector) VALUES(?,?,?,?,?,?,?)";
                     $stmt_insert = mysqli_stmt_init($con);
                     if (!mysqli_stmt_prepare($stmt_insert, $sql_insert)) {
                         header("location: ../../sign_up.php?error=sqlerror");
@@ -59,7 +60,7 @@
                     } else {
                         $hashed_password = password_hash($password, PASSWORD_ARGON2I);
                         $hashed_verification_token = password_hash($verification_token, PASSWORD_ARGON2I);
-                        mysqli_stmt_bind_param($stmt_insert, "ssssss", $first_name, $last_name, $email, $phone, $hashed_password, $hashed_verification_token);
+                        mysqli_stmt_bind_param($stmt_insert, "sssssss", $first_name, $last_name, $email, $phone, $hashed_password, $hashed_verification_token, $verification_selector);
                         mysqli_stmt_execute($stmt_insert);
                         $id = mysqli_stmt_insert_id($stmt_insert);
                         $sql_business_name = "INSERT INTO business(user_id, business_name) VALUES (?, ?)";
@@ -72,10 +73,10 @@
                             mysqli_stmt_execute($stmt_business_name);
                             include '../../emails/send_activation.php';
                             include '../../sms/sms.php';
+                            
+                            $sms_msg = "Hello ".$first_name.", Thanks for registering ".$business.". Kindly check your mail to activate account.";
 
-                            $sms_msg = "Hello $first_name, Thanks for registering $business. Kindly check your mail to activate account.";
-
-                            sendAccountVerfication(bin2hex($verification_token), $business, $first_name.' '.$last_name, $email);
+                            sendAccountVerfication(bin2hex($verification_token), $verification_selector, $business, $first_name.' '.$last_name, $email);
                             sendSMS($phone, $sms_msg);
                             header("location: ../../index.php?signup=success&email=$email");
                             exit();
