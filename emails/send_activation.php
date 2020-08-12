@@ -1,7 +1,6 @@
 <?php
 	include '../config/constants.php';
 
-
 	function sendAccountVerfication($token, $selector, $business_name, $to_name, $to_email){
 		// allow for demo mode testing of emails
 		define("DEMO", false); // setting to TRUE will stop the email from sending.

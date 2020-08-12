@@ -124,7 +124,7 @@
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
-                                        <strong>Error - </strong> Activation Failed. Seems your account has already been verified. Contact Support if this is a mistake!
+                                        <strong>Error - </strong> Activation Failed. Seems your account has already been verified. Kindly login or contact support if this is a mistake!
                                     </div>';
                                 }
                             ?>
