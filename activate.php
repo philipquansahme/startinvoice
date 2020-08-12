@@ -18,7 +18,10 @@
                 header("location: index.php?error=activationerror");
                 exit();
             } else {
-                if ($row['verify_status'] == 0) {
+                if($row['verify_token'] == ''){
+                    header("location: index.php?error=activationdonealready");
+                    exit();
+                } else if ($row['verify_status'] == 0) {
                     $num_of_login = $row['num_of_login'];
                     $tokenbin = hex2bin($verify_token);
                     $check_verify_token = password_verify($tokenbin, $row['verify_token']);
