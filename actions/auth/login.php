@@ -3,7 +3,6 @@
         
         require('../../config/db_con.php');
         
-
         $email = $_POST['email'];
         $password = $_POST['password'];
 

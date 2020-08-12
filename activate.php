@@ -26,7 +26,7 @@
                         header("location: index.php?error=activationnotfound");
                         exit();
                     } elseif ($check_verify_token === true) {
-                        $sql_update = "UPDATE users SET verify_status = ?, num_of_login = ?, last_login = current_timestamp() WHERE verify_selector = ?";
+                        $sql_update = "UPDATE users SET verify_status = ?, num_of_login = ?, last_login = current_timestamp(), verify_token = ? WHERE verify_selector = ?";
                         $stmt_update = mysqli_stmt_init($con);
                         if (!mysqli_stmt_prepare($stmt_update, $sql_update)) {
                             header("location: index.php?error=sqlerror");
@@ -34,7 +34,8 @@
                         } else {
                             $verify_status = 1;
                             $num_of_login = $num_of_login + 1;
-                            mysqli_stmt_bind_param($stmt_update, "iis", $verify_status, $num_of_login, $verify_selector);
+                            $verify_token = '';
+                            mysqli_stmt_bind_param($stmt_update, "iiss", $verify_status, $num_of_login, $verify_token ,$verify_selector);
                             mysqli_stmt_execute($stmt_update);
                             
                             // STARTING SESSIONS
