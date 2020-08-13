@@ -126,6 +126,13 @@
                                         </button>
                                         <strong>Error - </strong> Activation Failed. Seems your account has already been verified. Kindly login or contact support if this is a mistake!
                                     </div>';
+                                } elseif ($error == "verificationerror") {
+                                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>Error - </strong> Login Failed. Your account has not been verified. Kindly check your mail tp activate account!
+                                    </div>';
                                 }
                             ?>
                             <form class="form-horizontal mt-3 form-material" id="loginform" action="actions/auth/login.php" method="POST">
