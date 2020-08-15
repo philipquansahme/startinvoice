@@ -1,4 +1,4 @@
-<form class="form-horizontal">
+<!-- <form class="form-horizontal">
         <div class="card-body">
             <h3 class="card-title">Business Details</h3>
             <div class="form-group row">
@@ -54,7 +54,44 @@
         <div class="card-body">
             <div class="form-group mb-0 text-right">
                 <button type="submit" class="btn btn-info waves-effect waves-light">Save</button>
-                <!--button type="submit" class="btn btn-dark waves-effect waves-light">Cancel</button-->
             </div>
         </div>
-</form>
+</form> -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="card">
+                <div  class="card-header" style="background-color: #1E88E5; color:#ffffff;">
+                    <h4 class="card-title" style="color:#ffffff;">Manage Business Details</h4>
+                </div>
+                <div class="card-body">
+                    <form class="form-material mt-1">
+                        <div class="form-group">
+                            <label><b>Business Name</b></label>
+                            <input type="text" class="form-control form-control-line" name="business_name" placeholder="Enter your business name"> 
+                        </div>
+                        <div class="form-group">
+                            <label><b>Business Email</b></label>
+                            <input class="form-control" type="email"  name="business_email"  placeholder="Enter your business email"> 
+                        </div>
+                        <div class="form-group">
+                            <label><b>Business Address</b></label>
+                            <input class="form-control" type="text"  name="business_address"  placeholder="Enter your business address"> 
+                        </div>
+                        <div class="form-group">
+                            <label><b>Business Phone</b></label>
+                            <input class="form-control" type="text"  name="business_phone"  placeholder="Enter your business phone"> 
+                        </div>
+                        <div class="form-group">
+                            <label><b>Currency</b></label>
+                            <select class="form-control" name="currency">
+                                <option value="Cedis">Cedis</option> 
+                                <option value="Dollar">Dollar</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

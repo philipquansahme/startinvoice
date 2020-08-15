@@ -71,13 +71,12 @@
                         <li class="sidebar-item"><a href="?p=billing-officers"
                                 class="sidebar-link"><i class="mdi mdi-format-align-left"></i><span
                                     class="hide-menu">Add Staff</span></a></li>
-                        <li class="sidebar-item"><a href="#"
+                        <li class="sidebar-item"><a href="?p=business"
                                 class="sidebar-link"><i class="mdi mdi-format-align-right"></i><span
                                     class="hide-menu">Manage Staff</span></a></li>
                         <li class="sidebar-item"><a href="#"
                                 class="sidebar-link"><i class="mdi mdi-format-float-left"></i><span
                                     class="hide-menu">Delete Staff</span></a></li>
-
                     </ul>
                 </li>
                
