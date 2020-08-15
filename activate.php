@@ -44,6 +44,17 @@
                             // STARTING SESSIONS
                             session_start();
                             $_SESSION['LOGEIN']='OK';
+                            $_SESSION['user_id'] = $row['user_id'];
+                            $_SESSION['position_id'] = $row['position_id'];
+                            $_SESSION['first_name'] = $row['first_name'];  
+                            $_SESSION['last_name'] = $row['last_name'];  
+                            $_SESSION['email'] = $row['email'];  
+                            $_SESSION['phone_number'] = $row['phone_number'];
+                            $_SESSION['profile_pic'] = $row['profile_pic'];
+                            $_SESSION['num_of_login'] = $row['num_of_login'];
+                            $_SESSION['last_login'] = $row['last_login'];
+                            $_SESSION['owned_by'] = $row['owned_by'];
+
                             header("location: dashboard.php?login=activationsuccess");
                             exit();
                         }
