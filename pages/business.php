@@ -85,7 +85,7 @@
                         <div class="form-group">
                             <label><b>Currency</b></label>
                             <select class="form-control" name="currency">
-                                <option value="Cedis">Cedis</option>
+                                <option value="Cedis">Cedis</option> 
                                 <option value="Dollar">Dollar</option>
                             </select>
                         </div>
