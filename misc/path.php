@@ -21,10 +21,10 @@
             $content_title = 'Manager Info';
             $content_path = 'pages/manager_info.php';
             break;
-        case 'business':
-            $page_title = 'Business: Start Invoice';
-            $content_title = 'Business';
-            $content_path = 'pages/business.php';
+        case 'edit-business':
+            $page_title = 'Edit Business Details: Start Invoice';
+            $content_title = 'Edit Business Details';
+            $content_path = 'pages/admin/edit_business.php';
             break;
         case 'billing-officers':
             $page_title = 'Billing Officers: Start Invoice';

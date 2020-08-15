@@ -1,18 +1,3 @@
-<?php
-    include_once ('config/db_con.php');
-    $user_id = $_SESSION['user_id'];
-    $sql = "SELECT * FROM business WHERE user_id = $user_id";
-    $result = mysqli_query($con, $sql);
-    if (mysqli_num_rows($result) == 1) {
-        $row = mysqli_fetch_assoc($result);
-    } else {
-        $row = null;
-    }
-    if (isset($row['business_name'])) {
-        $business_name = $row['business_name'];
-    }
-?>
-
 <aside class="left-sidebar">
     <!-- Sidebar scroll-->
     <div class="scroll-sidebar">
@@ -22,7 +7,7 @@
             <div class="profile-img"> <img src="assets/images/users/profile.png" alt="user" class="w-100" /> </div>
             <!-- User profile text-->
             <div class="profile-text pt-1"> 
-                <a class="w-100 text-white d-block position-relative"><?php echo $business_name; ?></a>
+                <a class="w-100 text-white d-block position-relative"><?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?></a>
             </div>
         </div>
         <!-- End User profile text-->
@@ -31,13 +16,13 @@
             <ul id="sidebarnav">
                 <li class="nav-small-cap">
                     <i class="mdi mdi-dots-horizontal"></i>
-                    <span class="hide-menu">Business Owner</span>
+                    <span class="hide-menu">Billing Officer</span>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark" href="javascript:void(0)"
                         aria-expanded="false">
                         <i class="mdi mdi-gauge"></i>
-                        <span class="hide-menu">Dashboard</span>
+                        <span class="hide-menu">Dashboard </span>
                     </a>
 					
         
@@ -86,18 +71,12 @@
                                 </span></a></li>
                     </ul>
                 </li>
-                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
-                        href="javascript:void(0)" aria-expanded="false"><i
-                            class="mdi fa-industry" aria-hidden="true"></i><span class="hide-menu">Business Details</span></a>
-                    <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="?p=edit-business" class="sidebar-link"><i
-                                    class="mdi mdi-email"></i><span class="hide-menu"> Edit Details</span></a></li>
-                        <li class="sidebar-item"><a href="inbox-email-detail.html" class="sidebar-link"><i
-                                    class="mdi mdi-email-alert"></i><span class="hide-menu"> View Details
+				<li class="sidebar-item"><a href="users_module.php" class="sidebar-link"><i
+                                    class="mdi fa-industry"></i><span class="hide-menu">Business
                                 </span></a></li>
-                        
-                    </ul>
-                </li>
+                <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="authentication-login1.html" aria-expanded="false"><i
+                            class="mdi mdi-directions"></i><span class="hide-menu">Log Out</span></a></li> -->
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
@@ -108,7 +87,7 @@
         <!-- item-->
         <a href="" class="link" data-toggle="tooltip" title="Profile Settings"><i class="ti-settings"></i></a>
         <!-- item-->
-        <a href="" class="link" data-toggle="tooltip" title="Activity Log"><i class="mdi mdi-sort-variant"></i></a>
+        <a href="" class="link" data-toggle="tooltip" title="Activity Log"><i class="mdi mdi-gmail"></i></a>
         <!-- item-->
         <a href="actions/auth/logout.php" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
     </div>
