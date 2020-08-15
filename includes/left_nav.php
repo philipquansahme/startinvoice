@@ -68,7 +68,7 @@
                         href="javascript:void(0)" aria-expanded="false"><i
                             class="mdi fa-user "></i><span class="hide-menu">Administrator</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="#"
+                        <li class="sidebar-item"><a href="?p=billing-officers"
                                 class="sidebar-link"><i class="mdi mdi-format-align-left"></i><span
                                     class="hide-menu">Add Staff</span></a></li>
                         <li class="sidebar-item"><a href="#"
