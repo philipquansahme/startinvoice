@@ -131,7 +131,7 @@
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
-                                        <strong>Error - </strong> Login Failed. Your account has not been verified. Kindly check your mail tp activate account!
+                                        <strong>Error - </strong> Login Failed. Your account has not been verified. Kindly check your mail to activate account. Contact support if this is a mistake!
                                     </div>';
                                 }
                             ?>

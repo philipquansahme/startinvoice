@@ -7,7 +7,7 @@
             <div class="profile-img"> <img src="assets/images/users/profile.png" alt="user" class="w-100" /> </div>
             <!-- User profile text-->
             <div class="profile-text pt-1"> 
-                <a class="w-100 text-white d-block position-relative">Administrator</a>
+                <a class="w-100 text-white d-block position-relative"><?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?></a>
             </div>
         </div>
         <!-- End User profile text-->

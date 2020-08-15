@@ -131,10 +131,9 @@
                                 <div class="dw-user-box p-3 d-flex">
                                     <div class="u-img"><img src="assets/images/users/1.jpg" alt="user" class="rounded" width="80"></div>
                                     <div class="u-text ml-2">
-                                        <h4 class="mb-0">Steave Jobs</h4>
-                                        <p class="text-muted mb-1 font-14">varun@gmail.com</p>
-                                        <a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm text-white d-inline-block">View
-                                            Profile</a>
+                                        <h4 class="mb-0"><?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?></h4>
+                                        <p class="text-muted mb-1 font-12"><?php echo $_SESSION['email']; ?></p>
+                                        <a href="#" class="btn btn-rounded btn-danger btn-sm text-white d-inline-block" style="cursor: text;"><?php if ($_SESSION['position_id'] == 1) { echo 'Business Owner';} elseif ($_SESSION['position_id'] == 2) { echo 'Manager'; } elseif ($_SESSION['position_id'] == 3) { echo 'Billing Officer'; } ?></a>
                                     </div>
                                 </div>
                             </li>
