@@ -81,7 +81,7 @@
                 </li>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                         href="javascript:void(0)" aria-expanded="false"><i
-                            class="mdi mdi-sort-variant" aria-hidden="true"></i><span class="hide-menu">Billing Officer</span></a>
+                            class="mdi mdi-sort-variant" aria-hidden="true"></i><span class="hide-menu">Manage Users</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item"><a href="inbox-email.html" class="sidebar-link"><i
                                     class="mdi mdi-email"></i><span class="hide-menu"> Email </span></a></li>

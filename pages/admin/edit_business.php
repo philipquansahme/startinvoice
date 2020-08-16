@@ -62,6 +62,27 @@
                                 </button>
                                 <strong>Error - </strong> Problem saving your request. Kindly try again!
                             </div>';
+                        } elseif ($msg == "filesizeerror") {
+                            echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>Error - </strong> File size exceeds 2MB. Kindly try again!
+                            </div>';
+                        } elseif ($msg == "uploaderror") {
+                            echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>Error - </strong> Problem iploading your file. Kindly try again!
+                            </div>';
+                        } elseif ($msg == "filetypeerror") {
+                            echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>Error - </strong> File type not allowed. Must be JPG, JPEG or PNG!
+                            </div>';
                         }
                     ?>
                     <form class="form-material mt-1" enctype="multipart/form-data" action="actions/admin/edit_business.php" method="POST">
@@ -82,7 +103,8 @@
                             <input class="form-control" type="text"  name="business_phone"  placeholder="Enter your business phone" value="<?php echo $business_phone;?>"> 
                         </div>
                         <div class="form-group">
-                            <label><b>Business Logo</b></label>
+                            <label><b>Business Logo</b></label><br>
+                            <span class="help-block text-muted"><small>Allowed images files are JPG, JPEG and PNG. Not more than 2MB in size.</small></span>
                             <div class="fileinput fileinput-new input-group" data-provides="fileinput">
                                 <div class="form-control" data-trigger="fileinput"> <i
                                         class="glyphicon glyphicon-file fileinput-exists"></i> <span
@@ -94,6 +116,7 @@
                                     <input type="file" name="business_logo" value="<?php echo $business_logo;?>"> </span> <a href="#"
                                     class="input-group-addon btn btn-default fileinput-exists"
                                     data-dismiss="fileinput">Remove</a>
+                                    
                             </div>
                         </div>
                         <div class="form-group">
