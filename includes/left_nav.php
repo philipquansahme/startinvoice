@@ -10,6 +10,13 @@
     }
     if (isset($row['business_name'])) {
         $business_name = $row['business_name'];
+    } else {
+        $business_name = null;
+    }
+    if (isset($row['business_logo'])) {
+        $business_logo = $row['business_logo'];
+    } else {
+        $business_logo = null;
     }
 ?>
 
@@ -19,7 +26,7 @@
         <!-- User profile -->
         <div class="user-profile position-relative" style="background: url(assets/images/background/user-info.jpg) no-repeat;">
             <!-- User profile image -->
-            <div class="profile-img"> <img src="assets/images/users/profile.png" alt="user" class="w-100" /> </div>
+            <div class="profile-img"> <img src="<?php echo $business_logo; ?>" alt="<?php echo $business_name; ?>" class="w-100" style="border-radius: 50%;" /> </div>
             <!-- User profile text-->
             <div class="profile-text pt-1"> 
                 <a class="w-100 text-white d-block position-relative"><?php echo $business_name; ?></a>
@@ -74,7 +81,7 @@
                 </li>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                         href="javascript:void(0)" aria-expanded="false"><i
-                            class="mdi mdi-sort-variant" aria-hidden="true"></i><span class="hide-menu">Billing Officer</span></a>
+                            class="mdi mdi-sort-variant" aria-hidden="true"></i><span class="hide-menu">Manage Users</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item"><a href="inbox-email.html" class="sidebar-link"><i
                                     class="mdi mdi-email"></i><span class="hide-menu"> Email </span></a></li>
@@ -92,7 +99,7 @@
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item"><a href="?p=edit-business" class="sidebar-link"><i
                                     class="mdi mdi-email"></i><span class="hide-menu"> Edit Details</span></a></li>
-                        <li class="sidebar-item"><a href="inbox-email-detail.html" class="sidebar-link"><i
+                        <li class="sidebar-item"><a href="?p=view-business" class="sidebar-link"><i
                                     class="mdi mdi-email-alert"></i><span class="hide-menu"> View Details
                                 </span></a></li>
                         

@@ -123,13 +123,13 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <img src="assets/images/users/1.jpg" alt="user" width="30" class="profile-pic rounded-circle" />
+                        <img src="<?php echo $_SESSION['profile_pic']; ?>" alt="user" width="30" class="profile-pic rounded-circle" />
                     </a>
                     <div class="dropdown-menu mailbox dropdown-menu-right scale-up">
                         <ul class="dropdown-user list-style-none">
                             <li>
                                 <div class="dw-user-box p-3 d-flex">
-                                    <div class="u-img"><img src="assets/images/users/1.jpg" alt="user" class="rounded" width="80"></div>
+                                    <div class="u-img"><img src="<?php echo $_SESSION['profile_pic']; ?>" alt="user" class="rounded" width="80"></div>
                                     <div class="u-text ml-2">
                                         <h4 class="mb-0"><?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?></h4>
                                         <p class="text-muted mb-1 font-12"><?php echo $_SESSION['email']; ?></p>
