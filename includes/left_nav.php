@@ -99,7 +99,7 @@
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item"><a href="?p=edit-business" class="sidebar-link"><i
                                     class="mdi mdi-email"></i><span class="hide-menu"> Edit Details</span></a></li>
-                        <li class="sidebar-item"><a href="inbox-email-detail.html" class="sidebar-link"><i
+                        <li class="sidebar-item"><a href="?p=view-business" class="sidebar-link"><i
                                     class="mdi mdi-email-alert"></i><span class="hide-menu"> View Details
                                 </span></a></li>
                         

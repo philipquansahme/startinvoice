@@ -26,6 +26,11 @@
             $content_title = 'Edit Business Details';
             $content_path = 'pages/admin/edit_business.php';
             break;
+        case 'view-business':
+            $page_title = 'View Business Details: Start Invoice';
+            $content_title = 'View Business Details';
+            $content_path = 'pages/admin/view_business.php';
+            break;
         case 'billing-officers':
             $page_title = 'Billing Officers: Start Invoice';
             $content_title = 'Billing Officers';

@@ -8,6 +8,11 @@
     } else {
         $row = null;
     }
+    if (isset($row['user_id'])) {
+        $user_id = $row['user_id'];
+    } else {
+        $user_id = null;
+    }
     if (isset($row['business_name'])) {
         $business_name = $row['business_name'];
     } else {
@@ -48,6 +53,17 @@
                     <h4 class="card-title" style="color:#ffffff;">Manage Business Details</h4>
                 </div>
                 <div class="card-body">
+                    <?php
+                        $msg = (isset($_GET['msg'])) ? $_GET['msg'] : 'default';
+                        if ($msg == "edit-fail") {
+                            echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>Error - </strong> Problem saving your request. Kindly try again!
+                            </div>';
+                        }
+                    ?>
                     <form class="form-material mt-1" enctype="multipart/form-data" action="actions/admin/edit_business.php" method="POST">
                         <div class="form-group">
                             <label><b>Business Name</b></label>
@@ -83,11 +99,12 @@
                         <div class="form-group">
                             <label><b>Select Currency</b></label>
                             <select class="form-control" name="currency">
-                                <option value="Cedis"><i class="flag-icon flag-icon-gh" title="gh" id="gh"></i>  Cedis</option> 
+                                <option value="Cedis">Cedis</option> 
                                 <option value="Dollar">Dollar</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-info waves-effect waves-light mt-2 text-center" name="edit_business">Submit</button>
+                        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                        <button type="submit" class="btn btn-info waves-effect waves-light mt-2 text-center">Submit</button>
                     </form>
                 </div>
             </div>
