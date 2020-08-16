@@ -10,6 +10,13 @@
     }
     if (isset($row['business_name'])) {
         $business_name = $row['business_name'];
+    } else {
+        $business_name = null;
+    }
+    if (isset($row['business_logo'])) {
+        $business_logo = $row['business_logo'];
+    } else {
+        $business_logo = null;
     }
 ?>
 
@@ -19,7 +26,7 @@
         <!-- User profile -->
         <div class="user-profile position-relative" style="background: url(assets/images/background/user-info.jpg) no-repeat;">
             <!-- User profile image -->
-            <div class="profile-img"> <img src="assets/images/users/profile.png" alt="user" class="w-100" /> </div>
+            <div class="profile-img"> <img src="<?php echo $business_logo; ?>" alt="<?php echo $business_name; ?>" class="w-100" style="border-radius: 50%;" /> </div>
             <!-- User profile text-->
             <div class="profile-text pt-1"> 
                 <a class="w-100 text-white d-block position-relative"><?php echo $business_name; ?></a>

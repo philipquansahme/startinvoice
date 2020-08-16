@@ -15,6 +15,7 @@
 <script src="dist/js/sidebarmenu.js"></script>
 <!--Custom JavaScript -->
 <script src="dist/js/custom.min.js"></script>
+<script src="dist/js/pages/forms/jasny-bootstrap.js"></script>
 <!--This page JavaScript -->
 <!-- chartist chart -->
 <script src="assets/libs/chartist/dist/chartist.min.js"></script>
@@ -37,3 +38,4 @@
 <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
 <script src="dist/js/pages/datatable/datatable-advanced.init.js"></script>
+

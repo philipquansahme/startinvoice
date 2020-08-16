@@ -52,24 +52,27 @@
                         header("location: ../../sign_up.php?error=busnameexist");
                         exit();
                     }
-                    $sql_insert = "INSERT INTO users(first_name, last_name, email, phone_number, password, verify_token, verify_selector) VALUES(?,?,?,?,?,?,?)";
+                    $sql_insert = "INSERT INTO users(first_name, last_name, email, phone_number, password, verify_token, verify_selector, profile_pic) VALUES(?,?,?,?,?,?,?,?)";
                     $stmt_insert = mysqli_stmt_init($con);
                     if (!mysqli_stmt_prepare($stmt_insert, $sql_insert)) {
                         header("location: ../../sign_up.php?error=sqlerror");
                         exit();
                     } else {
+                        $default_profile = "assets/profile/default.jpg";
                         $hashed_password = password_hash($password, PASSWORD_ARGON2I);
                         $hashed_verification_token = password_hash($verification_token, PASSWORD_ARGON2I);
-                        mysqli_stmt_bind_param($stmt_insert, "sssssss", $first_name, $last_name, $email, $phone, $hashed_password, $hashed_verification_token, $verification_selector);
+                        mysqli_stmt_bind_param($stmt_insert, "ssssssss", $first_name, $last_name, $email, $phone, $hashed_password, $hashed_verification_token, $verification_selector, $default_profile);
                         mysqli_stmt_execute($stmt_insert);
                         $id = mysqli_stmt_insert_id($stmt_insert);
-                        $sql_business_name = "INSERT INTO business(user_id, business_name) VALUES (?, ?)";
+                        $sql_business_name = "INSERT INTO business(user_id, business_name, business_logo) VALUES (?, ?, ?)";
                         $stmt_business_name = mysqli_stmt_init($con);
                         if (!mysqli_stmt_prepare($stmt_business_name, $sql_business_name)) {
                             header("location: ../../sign_up.php?error=busnameexist");
                             exit();
                         } else {
-                            mysqli_stmt_bind_param($stmt_business_name, "is", $id, $business);
+                            include_once '../../misc/make_avatar.php';
+                            $avatar_url = make_avatar($business[0]);
+                            mysqli_stmt_bind_param($stmt_business_name, "iss", $id, $business, $avatar_url);
                             mysqli_stmt_execute($stmt_business_name);
                             include '../../emails/send_activation.php';
                             include '../../sms/sms.php';
