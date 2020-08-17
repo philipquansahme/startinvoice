@@ -67,32 +67,21 @@
 
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                         href="javascript:void(0)" aria-expanded="false"><i
-                            class="mdi fa-tasks"></i><span class="hide-menu">Manager</span></a>
+                            class="mdi fa-tasks"></i><span class="hide-menu">Customers</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item"><a href="inbox-email.html" class="sidebar-link"><i
-                                    class="mdi mdi-email"></i><span class="hide-menu"> Email </span></a></li>
+                                    class="mdi mdi-email"></i><span class="hide-menu"> Add Customers </span></a></li>
                         <li class="sidebar-item"><a href="inbox-email-detail.html" class="sidebar-link"><i
-                                    class="mdi mdi-email-alert"></i><span class="hide-menu"> Email Detail
+                                    class="mdi mdi-email-alert"></i><span class="hide-menu"> Manage Customers
                                 </span></a></li>
-                        <li class="sidebar-item"><a href="inbox-email-compose.html" class="sidebar-link"><i
+                        <!-- <li class="sidebar-item"><a href="inbox-email-compose.html" class="sidebar-link"><i
                                     class="mdi mdi-email-secure"></i><span class="hide-menu"> Email Compose
-                                </span></a></li>
+                                </span></a></li> -->
                     </ul>
                 </li>
-                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
-                        href="javascript:void(0)" aria-expanded="false"><i
-                            class="mdi mdi-sort-variant" aria-hidden="true"></i><span class="hide-menu">Manage Users</span></a>
-                    <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="inbox-email.html" class="sidebar-link"><i
-                                    class="mdi mdi-email"></i><span class="hide-menu"> Email </span></a></li>
-                        <li class="sidebar-item"><a href="inbox-email-detail.html" class="sidebar-link"><i
-                                    class="mdi mdi-email-alert"></i><span class="hide-menu"> Email Detail
-                                </span></a></li>
-                        <li class="sidebar-item"><a href="inbox-email-compose.html" class="sidebar-link"><i
-                                    class="mdi mdi-email-secure"></i><span class="hide-menu"> Email Compose
-                                </span></a></li>
-                    </ul>
-                </li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                    href="?p=manage-users" aria-expanded="false"><i class="mdi mdi-account-multiple-plus"></i><span
+                        class="hide-menu">Users</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                         href="javascript:void(0)" aria-expanded="false"><i
                             class="mdi fa-industry" aria-hidden="true"></i><span class="hide-menu">Business Details</span></a>
@@ -105,6 +94,7 @@
                         
                     </ul>
                 </li>
+                
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

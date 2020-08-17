@@ -31,6 +31,11 @@
             $content_title = 'View Business Details';
             $content_path = 'pages/admin/view_business.php';
             break;
+        case 'manage-users':
+            $page_title = 'Manage Users: Start Invoice';
+            $content_title = 'Manage Users';
+            $content_path = 'pages/admin/manage_users.php';
+            break;
         case 'billing-officers':
             $page_title = 'Billing Officers: Start Invoice';
             $content_title = 'Billing Officers';
