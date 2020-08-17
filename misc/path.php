@@ -6,20 +6,20 @@
             $content_title = 'Dashboard';
             $content_path = 'pages/board.php';
             break;
-        case 'users-module':
-            $page_title = 'Dashboard: Start Invoice';
-            $content_title = 'Dashboard';
-            $content_path = 'pages/users_module.php';
+        case 'generate-invoice':
+            $page_title = 'Generate Invoice: Start Invoice';
+            $content_title = 'Generate Invoice';
+            $content_path = 'pages/admin/generate_invoice.php';
             break;
-        case 'users-info':
-            $page_title = 'User Info: Start Invoice';
-            $content_title = 'User Info';
-            $content_path = 'pages/users_info.php';
+        case 'view-invoices':
+            $page_title = 'View Invoices: Start Invoice';
+            $content_title = 'View Invoices';
+            $content_path = 'pages/admin/view_invoices.php';
             break;
-        case 'manager-info':
-            $page_title = 'Manager Info: Start Invoice';
-            $content_title = 'Manager Info';
-            $content_path = 'pages/manager_info.php';
+        case 'invoice-reports':
+            $page_title = 'Invoice Reports: Start Invoice';
+            $content_title = 'Invoice Reports';
+            $content_path = 'pages/admin/invoice_reports.php';
             break;
         case 'edit-business':
             $page_title = 'Edit Business Details: Start Invoice';
@@ -31,9 +31,34 @@
             $content_title = 'View Business Details';
             $content_path = 'pages/admin/view_business.php';
             break;
-        case 'billing-officers':
-            $page_title = 'Billing Officers: Start Invoice';
-            $content_title = 'Billing Officers';
-            $content_path = 'pages/billing_officers.php';
+        case 'manage-users':
+            $page_title = 'Manage Users: Start Invoice';
+            $content_title = 'Manage Users';
+            $content_path = 'pages/admin/manage_users.php';
+            break;
+        case 'manage-customers':
+            $page_title = 'Manage Customers: Start Invoice';
+            $content_title = 'Manage Customers';
+            $content_path = 'pages/admin/manage_customers.php';
+            break;
+        case 'add-customers':
+            $page_title = 'Add Customers: Start Invoice';
+            $content_title = 'Add Customers';
+            $content_path = 'pages/admin/add_customers.php';
+            break;
+        case 'add-product':
+            $page_title = 'Add Products: Start Invoice';
+            $content_title = 'Add Products';
+            $content_path = 'pages/admin/add_product.php';
+            break;
+        case 'manage-products':
+            $page_title = 'Manage Products: Start Invoice';
+            $content_title = 'Manage Products';
+            $content_path = 'pages/admin/manage_products.php';
+            break;
+        case 'product-categories':
+            $page_title = 'Manage Products: Start Invoice';
+            $content_title = 'Manage Products';
+            $content_path = 'pages/admin/product_categories.php';
             break;
     }
