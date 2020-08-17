@@ -3,7 +3,7 @@
         <div class="col-md-10 mx-auto">
             <div class="card">
                 <div  class="card-header" style="background-color: #1E88E5; color:#ffffff;">
-                    <h4 class="card-title" style="color:#ffffff;">Add New Customer</h4>
+                    <h4 class="card-title" style="color:#ffffff;">Add New Product</h4>
                 </div>
                 <div class="card-body">
                     <?php
@@ -38,7 +38,8 @@
                             </div>';
                         }
                     ?>
-                    <form class="form-material mt-1">
+                        <p class="lead text-center">Multiple Product Add Form Goes Here</p>
+                    <!-- <form class="form-material mt-1">
                         <div class="form-group">
                             <label><b>Customer Name</b></label>
                             <input class="form-control" type="text"  name="customer_name"  placeholder="Enter customer's name "> 
@@ -60,7 +61,7 @@
                             <textarea class="form-control" rows="5"></textarea>
                         </div>
                         <button type="submit" class="btn btn-info waves-effect waves-light mt-2 text-center">Submit</button>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>

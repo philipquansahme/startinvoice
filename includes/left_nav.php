@@ -41,7 +41,7 @@
                     <span class="hide-menu">Business Owner</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark" href="javascript:void(0)"
+                    <a class="sidebar-link waves-effect waves-dark" href="?p=board"
                         aria-expanded="false">
                         <i class="mdi mdi-gauge"></i>
                         <span class="hide-menu">Dashboard</span>
@@ -49,29 +49,46 @@
 					
         
                 </li>
+
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                         href="javascript:void(0)" aria-expanded="false"><i
-                            class="mdi fa-user "></i><span class="hide-menu">Administrator</span></a>
+                            class="mdi mdi-ungroup"></i><span class="hide-menu">Invoices</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="?p=billing-officers"
+                        <li class="sidebar-item"><a href="?p=generate-invoice"
                                 class="sidebar-link"><i class="mdi mdi-format-align-left"></i><span
-                                    class="hide-menu">Add Staff</span></a></li>
-                        <li class="sidebar-item"><a href="?p=business"
+                                    class="hide-menu">Generate Invoice</span></a></li>
+                        <li class="sidebar-item"><a href="?p=view-invoices"
                                 class="sidebar-link"><i class="mdi mdi-format-align-right"></i><span
-                                    class="hide-menu">Manage Staff</span></a></li>
-                        <li class="sidebar-item"><a href="#"
+                                    class="hide-menu">View Invoices</span></a></li>
+                        <li class="sidebar-item"><a href="?p=invoice-reports"
                                 class="sidebar-link"><i class="mdi mdi-format-float-left"></i><span
-                                    class="hide-menu">Delete Staff</span></a></li>
+                                    class="hide-menu">Invoice Reports</span></a></li>
                     </ul>
                 </li>
 
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                         href="javascript:void(0)" aria-expanded="false"><i
-                            class="mdi fa-tasks"></i><span class="hide-menu">Customers</span></a>
+                            class="mdi mdi-cart-plus"></i><span class="hide-menu">Products</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="inbox-email.html" class="sidebar-link"><i
+                        <li class="sidebar-item"><a href="?p=add-product"
+                                class="sidebar-link"><i class="mdi mdi-format-align-left"></i><span
+                                    class="hide-menu">Add Product</span></a></li>
+                        <li class="sidebar-item"><a href="?p=manage-products"
+                                class="sidebar-link"><i class="mdi mdi-format-align-right"></i><span
+                                    class="hide-menu">Manage Products</span></a></li>
+                        <li class="sidebar-item"><a href="?p=product-categories"
+                                class="sidebar-link"><i class="mdi mdi-format-float-left"></i><span
+                                    class="hide-menu">Product Categories</span></a></li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                        href="javascript:void(0)" aria-expanded="false"><i
+                            class="mdi mdi-account-switch"></i><span class="hide-menu">Customers</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="?p=add-customers" class="sidebar-link"><i
                                     class="mdi mdi-email"></i><span class="hide-menu"> Add Customers </span></a></li>
-                        <li class="sidebar-item"><a href="inbox-email-detail.html" class="sidebar-link"><i
+                        <li class="sidebar-item"><a href="?p=manage-customers" class="sidebar-link"><i
                                     class="mdi mdi-email-alert"></i><span class="hide-menu"> Manage Customers
                                 </span></a></li>
                         <!-- <li class="sidebar-item"><a href="inbox-email-compose.html" class="sidebar-link"><i
