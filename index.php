@@ -50,7 +50,7 @@
                     <div class="row">
                         <div class="col-12">
                             <?php
-                                if (isset($_GET['email'])) { $email = $_GET['email']; }
+                                $email = (isset($_GET['email'])) ? $_GET['email'] : null; 
                                 $msg = (isset($_GET['signup'])) ? $_GET['signup'] : 'default';
                                 if ($msg == "success") {
                                     echo '<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"

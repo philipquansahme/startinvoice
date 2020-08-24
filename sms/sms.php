@@ -9,5 +9,5 @@
         file_get_contents($url);
     }
 
-    // sendSMS('0551427673', " SMS Test Encoded ^&*#( using new API from the Start Invoice Application");
+    // sendSMS('0208921299', " SMS Test Encoded ^&*#( using new API from the Start Invoice Application");
     // echo "Sent";
