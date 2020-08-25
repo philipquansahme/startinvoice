@@ -1,3 +1,10 @@
+<?php 
+    include_once ('config/db_con.php');
+    $user_id = $_SESSION['user_id'];
+    $sql = "SELECT * FROM users WHERE owned_by = $user_id";
+    $result = mysqli_query($con, $sql);
+    $row = (mysqli_num_rows($result) == 1) ? mysqli_fetch_assoc($result) : $row = null;
+?>
 <div class="table-responsive">
     <table class="table table-striped search-table v-middle">
         <thead class="header-item">
@@ -22,42 +29,47 @@
         </thead>
         <tbody>
             <!-- row -->
-            <tr class="search-items">
-                <td>
-                    <div class="n-chk align-self-center text-center">
-                        <div class="checkbox checkbox-info">
-                            <input type="checkbox" class="material-inputs contact-chkbox" id="checkbox1">
-                            <label class="" for="checkbox1"></label>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="d-flex align-items-center">
-                        <img src="../assets/images/users/1.jpg" alt="avatar" class="rounded-circle" width="35">
-                        <div class="ml-2">
-                            <div class="user-meta-info">
-                                <h5 class="user-name mb-0" data-name="Emma Adams">Emma Adams</h5>
-                                <span class="user-work text-muted" data-occupation="Web Developer">Web Developer</span>
+            <?php
+                while ($row) {
+                    echo "<tr class='search-items'>
+                    <td>
+                        <div class='n-chk align-self-center text-center'>
+                            <div class='checkbox checkbox-info'>
+                                <input type='checkbox' class='material-inputs contact-chkbox' id='checkbox1'>
+                                <label class=' for='checkbox1'></label>
                             </div>
                         </div>
-                    </div>
-                </td>
-                <td>
-                    <span class="usr-email-addr" data-email="adams@mail.com">adams@mail.com</span>
-                </td>
-                <td>
-                    <span class="usr-location" data-location="Boston, USA">Boston, USA</span>
-                </td>
-                <td>
-                    <span class="usr-ph-no" data-phone="+1 (070) 123-4567">+91 (070) 123-4567</span>
-                </td>
-                <td class="text-center">
-                    <div class="action-btn">
-                        <a href="javascript:void(0)" class="text-info edit"><i class="mdi mdi-account-edit font-20"></i></a>
-                        <a href="javascript:void(0)" class="text-dark delete ml-2"><i class="mdi mdi-delete font-20"></i></a>
-                    </div>
-                </td>
-            </tr>
+                    </td>
+                    <td>
+                        <div class='d-flex align-items-center'>
+                            <img src='assets/images/users/1.jpg' alt='avatar' class='rounded-circle' width='35'>
+                            <div class='ml-2'>
+                                <div class='user-meta-info'>
+                                    <h5 class='user-name mb-0' data-name='Emma Adams'>Emma Adams</h5>
+                                    <span class='user-work text-muted' data-occupation='Web Developer'>Web Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span class='usr-email-addr' data-email='adams@mail.com'>adams@mail.com</span>
+                    </td>
+                    <td>
+                        <span class='usr-location' data-location='Boston, USA'>Boston, USA</span>
+                    </td>
+                    <td>
+                        <span class='usr-ph-no' data-phone='+1 (070) 123-4567'>+91 (070) 123-4567</span>
+                    </td>
+                    <td class='text-center'>
+                        <div class='action-btn'>
+                            <a href='javascript:void(0)' class='text-info edit'><i class='mdi mdi-account-edit font-20'></i></a>
+                            <a href='javascript:void(0)' class='text-dark delete ml-2'><i class='mdi mdi-delete font-20'></i></a>
+                        </div>
+                    </td>
+                </tr>";
+                }
+            ?>
+            
             <!-- /.row -->
             <!-- row -->
             <!-- <tr class="search-items">

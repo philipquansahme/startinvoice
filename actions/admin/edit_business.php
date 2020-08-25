@@ -48,15 +48,6 @@
             header('location: ../../dashboard.php?p=edit-business&msg=edit-fail');
             exit();
         }
-
-
-
-        
-        
-        
-
-        
-        
     // } else {
     //     header('location: ../../dashboard.php?p=edit-business');
     // }

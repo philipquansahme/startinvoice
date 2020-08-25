@@ -138,7 +138,7 @@
                             <form class="form-horizontal mt-3 form-material" id="loginform" action="actions/auth/login.php" method="POST">
                                 <div class="form-group mb-3">
                                     <div class="">
-                                        <input class="form-control" type="email" required placeholder="Email Address" name="email"> </div>
+                                        <input class="form-control" type="email" required placeholder="Email Address" name="email" value="<?php echo $email; ?>"> </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <div class="">
