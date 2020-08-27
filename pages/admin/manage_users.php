@@ -74,7 +74,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label><b>First Name</b></label>
-                                        <input class="form-control" type="text"  name="first_name" required> 
+                                        <input class="form-control" type="text" id="c-name" name="first_name">
+                                        <span class="validation-text text-danger"></span>
                                     </div>
                                     <div class="form-group">
                                         <label><b>Last Name</b></label>
@@ -103,7 +104,7 @@
                     <div class="modal-footer">
                         <input type="hidden" name="owned_by" value="<?php echo $user_id; ?>">
                         <button  type="submit" id="btn-add" class="btn btn-success">Add</button>
-                        <!-- <button id="btn-edit" class="btn btn-success">Save</button> -->
+                        <button id="btn-edit" class="btn btn-success">Save</button>
                         <button class="btn btn-danger" data-dismiss="modal"> Discard</button>
                         </form>
                     </div>
