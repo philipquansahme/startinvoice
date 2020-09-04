@@ -96,9 +96,21 @@
                                 </span></a></li> -->
                     </ul>
                 </li>
-                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                     href="?p=manage-users" aria-expanded="false"><i class="mdi mdi-account-multiple-plus"></i><span
-                        class="hide-menu">Users</span></a></li>
+                        class="hide-menu">Users</span></a></li> -->
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                        href="javascript:void(0)" aria-expanded="false"><i
+                            class="mdi mdi-account-multiple-plus" aria-hidden="true"></i><span class="hide-menu">Users</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="?p=add-user" class="sidebar-link"><i
+                                    class="mdi mdi-email"></i><span class="hide-menu"> Add Users</span></a></li>
+                        <li class="sidebar-item"><a href="?p=manage-users" class="sidebar-link"><i
+                                    class="mdi mdi-email-alert"></i><span class="hide-menu"> Manage Users
+                                </span></a></li>
+                        
+                    </ul>
+                </li>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                         href="javascript:void(0)" aria-expanded="false"><i
                             class="mdi fa-industry" aria-hidden="true"></i><span class="hide-menu">Business Details</span></a>
