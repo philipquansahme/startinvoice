@@ -36,6 +36,11 @@
             $content_title = 'Manage Users';
             $content_path = 'pages/admin/manage_users.php';
             break;
+        case 'add-user':
+            $page_title = 'Add User: Start Invoice';
+            $content_title = 'Add User';
+            $content_path = 'pages/admin/add_manage_users.php';
+            break;
         case 'manage-customers':
             $page_title = 'Manage Customers: Start Invoice';
             $content_title = 'Manage Customers';

@@ -67,13 +67,14 @@
 													<td style="padding:10px 0 30px 0;">
                                                         <p style="text-align: center;">You\'re just one step away from accessing your account. Find login credentials below</p>
                                                         <center>
-                                                            <p>Email: {TO_EMAIL}</p><br>
-                                                            <p>Password: {PASSWORD}</p><br>
+                                                            <p>Email: {TO_EMAIL}</p>
+                                                            <p>Password: {PASSWORD}</p>
                                                         </center>
 														<center>
 															<a href="{CUSTOM_URL}" target="_blank" style="display: inline-block; padding: 11px 30px; margin: 20px 0px 30px; font-size: 15px; color: #fff; background: #1E88E5; border-radius: 60px; text-decoration:none;">Login Here</a>
 														</center>
-														<b>- Thanks (Start Invoice Team)</b> </td>
+                                                        <b>- Thanks (Start Invoice Team)</b> 
+                                                    </td>
 												</tr>
 												<tr>
 													<td style="border-top:1px solid #f6f6f6; padding-top:20px; color:#777; text-align: justify;">If the button above does not work, try copying and pasting the URL into your browser. If you continue to have problems, please feel free to contact us at info@startinvoice.tk</td>
