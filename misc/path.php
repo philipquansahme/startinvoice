@@ -56,6 +56,16 @@
             $content_title = 'Add Customers';
             $content_path = 'pages/admin/add_customers.php';
             break;
+        case 'add-supplier':
+            $page_title = 'Add Supplier: Start Invoice';
+            $content_title = 'Add Supplier';
+            $content_path = 'pages/admin/add_supplier.php';
+            break;
+        case 'manage-suppliers':
+            $page_title = 'Manage Suppliers: Start Invoice';
+            $content_title = 'Manage Suppliers';
+            $content_path = 'pages/admin/manage_suppliers.php';
+            break;
         case 'add-product':
             $page_title = 'Add Products: Start Invoice';
             $content_title = 'Add Products';
