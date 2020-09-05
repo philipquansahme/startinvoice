@@ -8,34 +8,6 @@
 <div class="col-md-10 mx-auto">
     <div class="widget-content searchable-container list">
         <div class="card card-body">
-            <?php
-                // $error = (isset($_GET['error'])) ? $_GET['error'] : 'default';
-                // if ($error == "acctexist") {
-                //     echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
-                //         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                //             <span aria-hidden="true">&times;</span>
-                //         </button>
-                //         <strong>Error - </strong> Email or Phone Number assigned to another user!
-                //     </div>';
-                // } elseif ($error == "sqlerror") {
-                //     echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
-                //         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                //             <span aria-hidden="true">&times;</span>
-                //         </button>
-                //         <strong>Error - </strong> Problem saving your request. Kindly try again!
-                //     </div>';
-                // }
-                // $msg = (isset($_GET['msg'])) ? $_GET['msg'] : 'default';
-                // if ($msg == "useradded") {
-                //     echo '<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
-                //         role="alert">
-                //         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                //             <span aria-hidden="true">&times;</span>
-                //         </button>
-                //         <strong>Success - </strong> User added successfully!
-                //     </div>';
-                // }
-            ?>
             <div class="row">
                 <div class="col-md-4">
                     <form>
@@ -52,6 +24,50 @@
 
         <div class="card card-body">
             <?php
+                $error = (isset($_GET['error'])) ? $_GET['error'] : 'default';
+                if ($error == "acctexist") {
+                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Error - </strong> Email or Phone Number assigned to another user!
+                    </div>';
+                } elseif ($error == "sqlerror") {
+                    echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Error - </strong> Problem saving your request. Kindly try again!
+                    </div>';
+                }
+                $msg = (isset($_GET['msg'])) ? $_GET['msg'] : 'default';
+                if ($msg == "useradded") {
+                    echo '<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
+                        role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Success - </strong> User added successfully!
+                    </div>';
+                } elseif ($msg == "useredited") {
+                    echo '<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
+                        role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Success - </strong> User record edited successfully!
+                    </div>';
+                } elseif ($msg == "userdeleted") {
+                    echo '<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
+                        role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Success - </strong> User deleted successfully!
+                    </div>';
+                }
+            ?>
+            <?php
                 if ($row == null) {
                     echo '<p class="lead mx-auto">No User Added Yet</p><br>';
                 } else {
@@ -65,6 +81,8 @@
                             </thead>
                         <tbody>';
                     while ($data = mysqli_fetch_assoc($result)) {
+                        $id = $data['user_id'];
+                        // $own = $data['owned_by'];
                         $position = ($data['position_id'] == 2) ? "Manager" : "Billing Officer";
                         echo "<tr class='search-items'>
                             <td>
@@ -86,12 +104,39 @@
                             </td>
                             <td class='text-center'>
                                 <div class='action-btn'>
-                                    <a href='javascript:void(0)' id='edit-button' class='text-info edit'><i class='mdi mdi-account-edit font-20'></i></a>
-                                    <a href='javascript:void(0)' class='text-danger delete ml-2'><i class='mdi mdi-delete font-20'></i></a>
+                                    <a href='?p=edit-user&id=".$id."' class='text-info'><i class='mdi mdi-account-edit font-20'></i></a>
+                                    <a href='javascript:void(0)' data-id='".$id."' data-toggle='modal' data-target='#danger-header-modal".$id."' class='text-danger ml-2'><i class='mdi mdi-delete font-20'></i></a>
                                 </div>
                             </td>
-                        </tr>";
-                    
+                        </tr> <div id='danger-header-modal".$id."' class='modal fade' tabindex='-1' role='dialog'
+                            aria-labelledby='danger-header-modalLabel' aria-hidden='true'>
+                            <div class='modal-dialog'>
+                                <div class='modal-content'>
+                                    <div class='modal-header modal-colored-header bg-danger'>
+                                        <h4 class='modal-title text-white' id='danger-header-modalLabel'>Delete User</h4>
+                                        <button type='button' class='close' data-dismiss='modal'
+                                            aria-hidden='true'>×</button>
+                                    </div>
+                                    <div class='modal-body'>
+                                        <h4 class='mt-0 text-center'>Are you sure you want to delete this user?</h4>
+                                        <p class='mt-1 text-center lead'>The action is irreversible</p>
+                                        <form class='form-material mt-1' method='POST' action='actions/admin/delete_manage_users.php'>
+                                            <input type='hidden' name='delete_id' value='".$id."'>
+                                            <div class='row'>
+                                                <div class='col-md-6'>
+                                                    <button type='submit' class='btn btn-danger float-md-right'>Delete</button>
+                                                </div>
+                                                <div class='col-md-6'>
+                                                    <button type='button' class='btn btn-info float-md-left' data-dismiss='modal'
+                                                    aria-hidden='true'>Cancel</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                </div>
+                            </div>
+                        </div>";
+
+                        
                     }
 
                     echo '</tbody>

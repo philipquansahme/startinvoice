@@ -17,6 +17,7 @@
 <script src="dist/js/custom.min.js"></script>
 <script src="dist/js/pages/forms/jasny-bootstrap.js"></script>
 <script src="dist/js/pages/contact/contact.js"></script>
+<script src="dist/js/pages/contact/my.js"></script>
 <!--This page JavaScript -->
 <!-- chartist chart -->
 <script src="assets/libs/chartist/dist/chartist.min.js"></script>
