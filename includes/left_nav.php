@@ -46,8 +46,6 @@
                         <i class="mdi mdi-gauge"></i>
                         <span class="hide-menu">Dashboard</span>
                     </a>
-					
-        
                 </li>
 
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
@@ -87,13 +85,21 @@
                             class="mdi mdi-account-switch"></i><span class="hide-menu">Customers</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item"><a href="?p=add-customers" class="sidebar-link"><i
-                                    class="mdi mdi-email"></i><span class="hide-menu"> Add Customers </span></a></li>
+                                    class="mdi mdi-email"></i><span class="hide-menu"> Add Customer </span></a></li>
                         <li class="sidebar-item"><a href="?p=manage-customers" class="sidebar-link"><i
                                     class="mdi mdi-email-alert"></i><span class="hide-menu"> Manage Customers
                                 </span></a></li>
-                        <!-- <li class="sidebar-item"><a href="inbox-email-compose.html" class="sidebar-link"><i
-                                    class="mdi mdi-email-secure"></i><span class="hide-menu"> Email Compose
-                                </span></a></li> -->
+                    </ul>
+                </li>
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                        href="javascript:void(0)" aria-expanded="false"><i
+                            class="mdi mdi-truck-delivery"></i><span class="hide-menu">Suppliers</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="?p=add-supplier" class="sidebar-link"><i
+                                    class="mdi mdi-email"></i><span class="hide-menu"> Add Supplier </span></a></li>
+                        <li class="sidebar-item"><a href="?p=manage-suppliers" class="sidebar-link"><i
+                                    class="mdi mdi-email-alert"></i><span class="hide-menu"> Manage Suppliers
+                                </span></a></li>
                     </ul>
                 </li>
                 <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
