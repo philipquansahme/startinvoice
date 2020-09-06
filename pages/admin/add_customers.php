@@ -7,36 +7,15 @@
                 </div>
                 <div class="card-body">
                     <?php
-                        $msg = (isset($_GET['msg'])) ? $_GET['msg'] : 'default';
-                        if ($msg == "edit-fail") {
+                        $error = (isset($_GET['error'])) ? $_GET['error'] : 'default';
+                        if ($error == "sqlerror") {
                             echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                                 <strong>Error - </strong> Problem saving your request. Kindly try again!
                             </div>';
-                        } elseif ($msg == "filesizeerror") {
-                            echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <strong>Error - </strong> File size exceeds 2MB. Kindly try again!
-                            </div>';
-                        } elseif ($msg == "uploaderror") {
-                            echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <strong>Error - </strong> Problem iploading your file. Kindly try again!
-                            </div>';
-                        } elseif ($msg == "filetypeerror") {
-                            echo '<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <strong>Error - </strong> File type not allowed. Must be JPG, JPEG or PNG!
-                            </div>';
-                        }
+                        } 
                     ?>
                     <form class="form-material mt-1" method="POST" action="actions/admin/add_customers.php">
                         <div class="form-group">
