@@ -61,6 +61,11 @@
             $content_title = 'Add Supplier';
             $content_path = 'pages/admin/add_supplier.php';
             break;
+        case 'edit-supplier':
+            $page_title = 'Edit Supplier: Start Invoice';
+            $content_title = 'Edit Supplier';
+            $content_path = 'pages/admin/edit_supplier.php';
+            break;
         case 'manage-suppliers':
             $page_title = 'Manage Suppliers: Start Invoice';
             $content_title = 'Manage Suppliers';

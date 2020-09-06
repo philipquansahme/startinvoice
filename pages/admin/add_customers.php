@@ -38,7 +38,7 @@
                             </div>';
                         }
                     ?>
-                    <form class="form-material mt-1">
+                    <form class="form-material mt-1" method="POST" action="actions/admin/add_customers.php">
                         <div class="form-group">
                             <label><b>Customer Name</b></label>
                             <input class="form-control" type="text"  name="customer_name"  placeholder="Enter customer's name "> 
@@ -53,12 +53,13 @@
                         </div>
                         <div class="form-group">
                             <label><b>Billing Address</b></label>
-                            <textarea class="form-control" rows="5"></textarea>
+                            <textarea class="form-control" rows="5" name="billing_address"></textarea>
                         </div>
                         <div class="form-group">
                             <label><b>Shipping Address</b></label>
-                            <textarea class="form-control" rows="5"></textarea>
+                            <textarea class="form-control" rows="5" name="shipping_address"></textarea>
                         </div>
+                        <input type="hidden"  name="user_id" value="<?php echo $_SESSION['user_id'];?>">
                         <button type="submit" class="btn btn-info waves-effect waves-light mt-2 text-center">Submit</button>
                     </form>
                 </div>
